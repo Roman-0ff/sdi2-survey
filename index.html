@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Опросник SDI-2</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Опросник SDI-2</h1>
+    <p class="subtitle">Sexual Desire Inventory-2 · русская адаптация</p>
+    <p class="privacy-note">
+      🔒 Все ответы обрабатываются <b>локально в вашем браузере</b>.
+      Ничего не отправляется на сервер, данные не сохраняются.
+    </p>
+  </header>
+
+  <section id="demographics" class="card">
+    <h2>Демографические данные</h2>
+    <div class="field">
+      <label>Пол:</label>
+      <label class="radio"><input type="radio" name="gender" value="Мужской" checked> Мужской</label>
+      <label class="radio"><input type="radio" name="gender" value="Женский"> Женский</label>
+    </div>
+    <div class="field">
+      <label for="age">Возраст:</label>
+      <input type="number" id="age" min="18" max="100" value="30">
+    </div>
+  </section>
+
+  <section id="questions" class="card">
+    <h2>Вопросы</h2>
+    <div id="questions-container"></div>
+  </section>
+
+  <section class="actions">
+    <button id="btn-chart" class="secondary">Показать график</button>
+    <button id="btn-pdf" class="primary">Скачать PDF-отчёт</button>
+  </section>
+
+  <section id="chart-section" class="card hidden">
+    <h2>Профиль результатов</h2>
+    <canvas id="resultChart" width="600" height="320"></canvas>
+  </section>
+
+  <footer>
+    <p>Результат носит ознакомительный характер и не заменяет консультацию специалиста.</p>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
